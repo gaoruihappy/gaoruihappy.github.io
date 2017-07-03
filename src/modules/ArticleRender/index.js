@@ -1,5 +1,7 @@
 import { React } from 'zola'
 import './markdown.styl'
+import showdown from 'showdown'
+
 export default class extends React.Component{
 	constructor(props) {
 	  super(props);
@@ -13,10 +15,10 @@ export default class extends React.Component{
 	  	fetch(filePath).then((data) =>{
 	  		data.text().then(text =>{
 	  			// debugger
-	  			// const converter = new showdown.Converter()
-	  			// converter.setOption('tables', true);
-	  			// const content   = converter.makeHtml(text);
-				this.setState({content:text})
+	  			const converter = new showdown.Converter()
+	  			converter.setOption('tables', true);
+	  			const content   = converter.makeHtml(text);
+				this.setState({content})
 	  		})
 	  	})
 	}
