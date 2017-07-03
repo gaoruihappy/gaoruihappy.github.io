@@ -17,6 +17,6 @@
     "entry": "index.js",
     "dist": "./dist",
     "openBrowser": false,
-    "deps": "./article/"
+    "deps": "./article"
   }
 }
