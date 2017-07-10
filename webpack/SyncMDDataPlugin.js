@@ -49,6 +49,7 @@ function getFileContent(fileList){
 	export default [${result.join(',')}]
 	`
 }
+let currentFileConent = ''
 
 Object.assign(SyncMDDataPlugin.prototype, {
     apply(compiler) {
@@ -59,6 +60,13 @@ Object.assign(SyncMDDataPlugin.prototype, {
             })
 
             const content = getFileContent(articles)
+            console.log(content == currentFileConent)
+
+            if(content == currentFileConent){
+            	return
+            }
+            currentFileConent = content
+            
             fs.writeFileSync(WRITE_FILE_PATH,content,{
             	charset:'utf-8'
             })
@@ -66,11 +74,12 @@ Object.assign(SyncMDDataPlugin.prototype, {
         compiler.plugin('compilation', function() {
             writeData()
         })
+        // writeData()
         // watch 
         var watcher = chokidar.watch(ARTILE_PATH,{
         	ignoreInitial:true
         })
-        watcher.on('add', writeData).on('unlink',writeData).on('change',writeData)
+        watcher.on('add', writeData).on('unlink',writeData)
     }
 })
 

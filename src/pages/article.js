@@ -1,22 +1,56 @@
 /**
  *  === page ===
  *
- *  created at: Tue Jun 27 2017 18:27:29 GMT+0800 (CST)
+ *  created at: Tue Jun 27 2017 18:29:16 GMT+0800 (CST)
  */
 
 import { React, Page } from 'zola'
-// import ArticleMap  from 'data/article'
-// import AsyncComponent from 'modules/AsyncComponent'
-import ArticleRender from 'modules/ArticleRender'
-export default class Index extends Page {
+import articleList from 'data/article'
+import highlight from 'highlight.js'
+
+const noop = () => {}
+export default class extends Page {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: '',
+      author: '匿名',
+      createTime: '',
+      title: '',
+      tags: []
+    }
+  }
+
+  componentWillMount() {
+    let {params} = this.props;
+    let {path} = params;
+    let article = articleList.find(v => v.title == path);
+    article.component().then(content => {
+      this.setState({
+        content
+      })
+    })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    var blocks = Array.from(document.querySelectorAll('pre code'));
+    blocks.forEach(block => highlight.highlightBlock(block));
+  }
 
   render () {
-  	const filePath = this.props.params.path
-  	const path = `/article/${filePath}.md`
+    let {content} = this.state;
     return (
-      <div>
-      	<ArticleRender articlePath={path}/>
-      </div>
+      !!content
+      ? <div className="article-wrapper">
+          <div className="article-header">
+            <div className="author">
+            </div>
+          
+          </div>
+          <div dangerouslySetInnerHTML={{__html: content}}></div>
+        </div>
+      : <div>Loading...</div>
     )
   }
 }

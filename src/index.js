@@ -1,7 +1,7 @@
 /**
- *  === my_project ===
+ *  === tinys ===
  *
- *  created at: Tue Jun 27 2017 18:29:46 GMT+0800 (CST)
+ *  created at: Tue Jun 27 2017 18:27:29 GMT+0800 (CST)
  */
 
 `
@@ -12,12 +12,10 @@
 
   with ♥︎ by lianjia-fe
 `
-
 import './styles/common.styl'
 
 import zola from 'zola'
 import routes from './routes'
-console.log(MY_ARTICLE_DATA)
 zola
   .set('env', process.env.NODE_ENV)
   .render(routes, '#root')

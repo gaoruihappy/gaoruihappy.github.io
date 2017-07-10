@@ -1,16 +1,18 @@
 {
-  "name": "my_project",
+  "name": "tinys",
   "version": "0.0.1",
   "description": "a react application powerd by zola",
   "scripts": {
     "start": "ENVIRONMENT=development redskull start --dashboard false",
     "test": "ENVIRONMENT=testing redskull build",
-    "build": "ENVIRONMENT=production redskull build --publicPath http://gaoruihappy.github.io/dist/ & cp -f ./dist/index.html ./index.html"
+    "build": "ENVIRONMENT=production redskull build --publicPath https://tinys.github.io/dist/ && cp -f ./dist/index.html ./index.html"
   },
   "license": "ISC",
   "dependencies": {
     "@lianjia/zola-core": "0.0.4",
-    "chokidar": "^1.7.0",
+    "highlight.js": "^9.12.0",
+    "html-loader": "^0.4.5",
+    "react-html-parser": "^1.0.3",
     "showdown": "^1.7.1"
   },
   "redskull": {
@@ -19,6 +21,9 @@
     "entry": "index.js",
     "dist": "./dist",
     "openBrowser": false,
-    "deps": "./article"
+    "favico": "./src/favicon.ico"
+  },
+  "devDependencies": {
+    "chokidar": "^1.7.0"
   }
 }

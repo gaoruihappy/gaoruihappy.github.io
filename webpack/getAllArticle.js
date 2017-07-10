@@ -55,7 +55,8 @@ const getAllMarkdownFile = function(filePath){
           return true
         }
         return false
-      }) || `:${defaultDate.toLocaleDateString()} ${defaultDate.toLocaleTimeString()}`
+      }) || ``
+      // }) || `:${defaultDate.toLocaleDateString()} ${defaultDate.toLocaleTimeString()}`
       
       const createTimeArr = createTimeStr.split(':')
       createTimeArr.shift()
