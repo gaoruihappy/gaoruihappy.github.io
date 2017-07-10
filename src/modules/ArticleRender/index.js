@@ -10,8 +10,6 @@ export default class extends React.Component{
 	  };
 	}
 	componentWillMount(){
-		console.log(this.props)
-		console.log(this.props)
 		const filePath = this.props.articlePath
 	  	fetch(filePath).then((data) =>{
 	  		data.text().then(text =>{
