@@ -3,6 +3,7 @@
  *
  *  created at: Tue Jun 27 2017 18:29:16 GMT+0800 (CST)
  */
+import styles from './article.styl'
 
 import { React, Page } from 'zola'
 import articleList from 'data/article'

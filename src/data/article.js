@@ -13,19 +13,7 @@
 
 	},
 	{
-		"title":"git","path":"/git","createTime":"2017/06/28","component":()=>System.import('article/git.md')
-
-	},
-	{
-		"title":"mac","path":"/mac","createTime":"2017/06/28","component":()=>System.import('article/mac.md')
-
-	},
-	{
 		"title":"react","path":"/react","createTime":"2017/07/01","component":()=>System.import('article/react.md')
-
-	},
-	{
-		"title":"sublime","path":"/sublime","createTime":"2017/06/28","component":()=>System.import('article/sublime.md')
 
 	},
 	{
