@@ -35,7 +35,7 @@
       </div>
     </div>
   </nav>
-  <div id="<%= htmlWebpackPlugin.options.appMountId || 'app'%>" style="margin-left:200px;margin-top:50px;"></div>
+  <div id="<%= htmlWebpackPlugin.options.appMountId || 'app'%>" style="margin-left:200px;margin-top:50px;" class="markdown"></div>
   <% if (htmlWebpackPlugin.options.appMountIds && htmlWebpackPlugin.options.appMountIds.length > 0) { %>
     <% for (var index in htmlWebpackPlugin.options.appMountIds) { %>
     <div id="<%= htmlWebpackPlugin.options.appMountIds[index]%>"></div>
