@@ -1,7 +1,10 @@
 ---
 createTime : 2017/07/02
 author : 高瑞
-title : 7种使用VueJs定义一个组件模板的方式
+type: 前端框架
+title : VueJs定义组件模板
+image:http://img3.imgtn.bdimg.com/it/u=2587595854,1193038019&fm=26&gp=0.jpg
+
 subtitle: 使用恰当的方式来写vue模板
 ---
 # 7种使用VueJs定义一个组件模板的方式

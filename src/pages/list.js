@@ -19,18 +19,25 @@ export default class Index extends Page {
     return (
       <div>
       	<ul>
+      	<div className="listContent">
       		{
 		      	articleList.map((article,index) =>{
-
+		      		// debugger
 		      		return (
-		      			<li key={index} >
-		      				<a href={`#/article${article.path}`}>
-		      				{article.title}
+		      			<div key={index} className="post small">
+		      				<div className="image"><img className="listimage" src={article.image} /></div>
+		      				<a href={`#/article/${article.path}`}><h2 className="title">{article.title}</h2></a>
+		      				<div className="time">{article.createTime}&nbsp;&nbsp;/&nbsp;&nbsp;{article.type}</div>
+		      				<div className="summary">{article.summary}</div>
+		      				<a href={`#/article/${article.path}`}>
+		      				READ MORE
 		      				</a>
-		      			</li>
+		      			</div>
 	      			)
 		      	})
 		      }
+		      </div>
+
       	</ul>
       </div>
     )

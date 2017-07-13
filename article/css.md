@@ -1,8 +1,11 @@
 ---
 createTime : 2017/06/28
+type:网页设计
+image:http://f11.baidu.com/it/u=1389657083,2544671538&fm=72
 author : 于彤硕
 title : css变量
 subtitle: 合理使用css变量使得开发更高效
+
 ---
 #CSS变量，来了？
 

@@ -24,9 +24,9 @@ export default class extends Page {
   }
 
   componentWillMount() {
-    let {params} = this.props;
-    let {path} = params;
-    let article = articleList.find(v => v.title == path);
+    
+    let path = this.props.params.path;
+    let article = articleList.find(v => v.path == path);
     article.component().then(content => {
       this.setState({
         content

@@ -1,8 +1,12 @@
 ---
 createTime : 2017/07/01
 author : 马文婷
-title : 揭开React风靡前端开发领域的面纱
+type: 前端框架
+title : React风靡前端
 subtitle: react原理浅析
+image:http://img2.imgtn.bdimg.com/it/u=3796539907,3191775629&fm=26&gp=0.jpg
+
+
 ---
 # 揭开React风靡前端开发领域的面纱
 

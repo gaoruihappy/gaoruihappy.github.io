@@ -4,6 +4,7 @@
  */
 const fs = require('fs')
 const path = require('path')
+const summarize = require('summarize-markdown')
 
 const ARTICLE_PATH = path.join(__dirname,'..','article')
 
@@ -45,29 +46,58 @@ const getAllMarkdownFile = function(filePath){
     * 
     */
    const result = markdownFile.map((file) =>{
-      const content = fs.readFileSync(file,{
+      let content = fs.readFileSync(file,{
         charset:'utf-8'
       }).toString()
 
-      const defaultDate = new Date()
-      const createTimeStr = content.split('\n').find(str =>{
-        if(str.indexOf('createTime') >=0){
-          return true
+      const start = content.indexOf("---");
+      const end = content.indexOf("---", start+3) + 3;
+      let header = content.substring(start, end),
+          obj = {};
+
+      content = summarize(content.replace(header, ""))
+                .substring(0, 50);
+      header = header.substring(3, header.length - 3);
+      const arr = header.split("\n");
+
+      arr.forEach(v => {
+        if(!!v.trim()){
+          const temp = v.split(":");
+          if(temp[0].trim()=="image"){
+            obj[temp[0].trim()] = temp[1].trim()+':'+temp[2].trim();
+          }else{
+
+          obj[temp[0].trim()] = temp[1].trim();
+          }
         }
-        return false
-      }) || ``
-      // }) || `:${defaultDate.toLocaleDateString()} ${defaultDate.toLocaleTimeString()}`
+      })
+      const filename = path.basename(file, ".md");
+      const filepath = path.basename(file);
+      return Object.assign(obj, {
+        filename,
+        path: filepath.replace('.md',''),
+        summary: `${content}...`
+      })
+
+      // const defaultDate = new Date()
+      // const createTimeStr = content.split('\n').find(str =>{
+      //   if(str.indexOf('createTime') >=0){
+      //     return true
+      //   }
+      //   return false
+      // }) || ``
+      // // }) || `:${defaultDate.toLocaleDateString()} ${defaultDate.toLocaleTimeString()}`
       
-      const createTimeArr = createTimeStr.split(':')
-      createTimeArr.shift()
-      const createTime = createTimeArr.join(":").trim()
-      const fileName = path.basename(file,'.md')
-      const filePath = file.replace(ARTICLE_PATH,'')
-      return {
-        title:fileName,
-        path:filePath.replace('.md',''),
-        createTime
-      }
+      // const createTimeArr = createTimeStr.split(':')
+      // createTimeArr.shift()
+      // const createTime = createTimeArr.join(":").trim()
+      // const fileName = path.basename(file,'.md')
+      // const filePath = file.replace(ARTICLE_PATH,'')
+      // return {
+      //   title:fileName,
+      //   path:filePath.replace('.md',''),
+      //   createTime
+      // }
    })
 
    /**

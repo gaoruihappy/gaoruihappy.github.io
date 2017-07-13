@@ -20,21 +20,27 @@
   <% } %>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-    <div class="container topnav">
-      <div class="navbar-header">
-        <a class="navbar-brand topnav" href="/#/" >Home</a>
+  <div id="container"> 
+      <div id="header"> 
+          <div class="inside clearfix">
+              <div id="logo"> 
+                 <h1 class="logo">
+                  <a href="/">前端技术博客</a>
+                </h1> 
+              </div> 
+               <div class="right clearfix"> 
+               <div id="search-3" class="widget_search sidebarBox widgetBox clearfix"> 
+               <div method="post" id="searchform" role="search" action="/">
+                <input type="text" value="Search..." name="s" id="s" > 
+                <input type="hidden" id="searchsubmit"> 
+                </div> 
+                </div> 
+              </div> 
+              <a href="#slideNav" class="menuToggle"></a> 
+            </div>
       </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          
-         <!--  <li>
-            <a href="">Contact</a>
-          </li> -->
-        </ul>
-      </div>
-    </div>
-  </nav>
+  </div>
+
   <div id="<%= htmlWebpackPlugin.options.appMountId || 'app'%>" style="margin-left:200px;margin-top:50px;" class="markdown"></div>
   <% if (htmlWebpackPlugin.options.appMountIds && htmlWebpackPlugin.options.appMountIds.length > 0) { %>
     <% for (var index in htmlWebpackPlugin.options.appMountIds) { %>

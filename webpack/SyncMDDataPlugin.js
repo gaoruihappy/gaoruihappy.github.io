@@ -30,7 +30,7 @@ function articleToCode(article){
 	keys.forEach((k) =>{
 		result.push(`"${k}":${JSON.stringify(article[k])}`)
 	})
-	result.push(`"component":()=>System.import('article${article.path}.md')`)
+	result.push(`"component":()=>System.import('article/${article.path}.md')`)
 
 	return `
 	{
