@@ -1,4 +1,3 @@
-#tinys
+#gaoruihappy
 
-> A Zola Application
-> with ♥︎ by lianjia-fe
+> A technology bolg about Front end
