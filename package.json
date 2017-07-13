@@ -23,7 +23,7 @@
     "openBrowser": false,
     "devConfig": "./webpack/config.dev.js",
     "prodConfig": "./webpack/config.prod.js",
-    "favico": "",
+    "favico": "./src/favicon.ico",
     "noHash": true
   }
 }
