@@ -51,7 +51,7 @@ export default class extends Page {
           </div>
           <div dangerouslySetInnerHTML={{__html: content}}></div>
         </div>
-      : <div>Loading...</div>
+      : <div></div>
     )
   }
 }
