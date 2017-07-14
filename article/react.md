@@ -14,16 +14,19 @@ image:http://img2.imgtn.bdimg.com/it/u=3796539907,3191775629&fm=26&gp=0.jpg
 
 以下是React如此迅速流行的几个原因：
 
-* 使用DOM API成本较大。React使开发人员能够使用比真实浏览器更友好的虚拟浏览器。React的虚拟浏览器就像开发者和真实浏览器之间的代理一样。
-* React允许开发人员声明式地描述UI并给界面状态建模。这意味着开发者只需通过一个最终的状态来描述页面，而不必一步步的处理界面上发生的交互。当前的状态发生改变时，React会相应地更新UI。
-* React只是JavaScript，开发者只需学习非常少量的API（一些函数及函数使用方法）来掌握React。掌握JavaScript技能有助于你成为更好的React开发人员，没有入门障碍。一个JavaScript开发者可以在几个小时内成为一个高效的React开发者。
+使用DOM API成本较大。React使开发人员能够使用比真实浏览器更友好的虚拟浏览器。React的虚拟浏览器就像开发者和真实浏览器之间的代理一样。
+
+React允许开发人员声明式地描述UI并给界面状态建模。这意味着开发者只需通过一个最终的状态来描述页面，而不必一步步的处理界面上发生的交互。当前的状态发生改变时，React会相应地更新UI。
+
+React只是JavaScript，开发者只需学习非常少量的API（一些函数及函数使用方法）来掌握React。掌握JavaScript技能有助于你成为更好的React开发人员，没有入门障碍。一个JavaScript开发者可以在几个小时内成为一个高效的React开发者。
 
 不仅仅是这些，下面让我们揭开React不断流行背后的更多原因。一个原因是它的Virtual DOM（React的reconciliation 算法)。我们通过一个例子来展示这算法的实际应用价值。
 
 React的官方定义：*用于构建UI的JavaScript库*。这个定义强调了两个不同的方面：
 
-1. **React是一个JavaScript库，不是一个框架**。 它并不是一套完整的解决方案，我们需要使用更多其他的库。React并不能取代一套解决方案中的其他角色。它只关注于做好一件事。
-2. **另一方面，React做的很棒的地方：*构建UI* **：UI使得用户可以与机器进行交互。UI随处可见，小到微波炉上的一个按钮，大到航天器的仪表盘。如果我们要交互的设备可以识别Javascript语言，那么我们就可以使用React来描述它的UI。
+React是一个JavaScript库，不是一个框架。 它并不是一套完整的解决方案，我们需要使用更多其他的库。React并不能取代一套解决方案中的其他角色。它只关注于做好一件事。
+
+另一方面，React做的很棒的地方：*构建UI* **：UI使得用户可以与机器进行交互。UI随处可见，小到微波炉上的一个按钮，大到航天器的仪表盘。如果我们要交互的设备可以识别Javascript语言，那么我们就可以使用React来描述它的UI。
 
 
 Web浏览器可以识别JavaScript，所以我们可以使用React来描述Web用户界面。我喜欢用**描述**这个词，因为这就是我们用React主要做的事：只需要告诉它我们想要什么，然后React帮我们在Web浏览器中构建出实际的UI。如果没有React或类似的库，我们将不得不使用原生的Web API和JavaScript手动构建用户界面。
@@ -180,9 +183,11 @@ ReactDOM.render(
 
 `React.createElement`接收一些参数：
 
-* 第一个参数是HTML标签，在我们的例子中是一个div。
-* 第二个参数是一个对象，表示我们希望此标签具有的一些属性。为了与前面原生JS示例保持一致，我们用`{className:"demo"}`,它将被转为`class="demo"`。注意我们在属性中用的是`className`而不是`class` ,因为React是用JavaScript与Web API匹配而不是HTML本身。
-* 第三个参数是元素的内容。我们在其中放了一个“Hello React”字符串。
+第一个参数是HTML标签，在我们的例子中是一个div。
+
+第二个参数是一个对象，表示我们希望此标签具有的一些属性。为了与前面原生JS示例保持一致，我们用`{className:"demo"}`,它将被转为`class="demo"`。注意我们在属性中用的是`className`而不是`class` ,因为React是用JavaScript与Web API匹配而不是HTML本身。
+
+第三个参数是元素的内容。我们在其中放了一个“Hello React”字符串。
 
 现在我们可以测试一下。浏览器应该显示“Hello JS”和“Hello React”。通过使用样式，我们把示例div显示为一个盒子，便于视觉上的区分。在`index.html`中：
 

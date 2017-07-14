@@ -10,13 +10,13 @@ subtitle: 使用恰当的方式来写vue模板
 # 7种使用VueJs定义一个组件模板的方式
 有很多种方式可以在在vue中定义组件模板，据我所知至少有7种。
 
-* String
-* Template literal
-* X-Templates
-* Inline
-* Render functions
-* JSX
-* Single page components  
+####String
+####Template literal
+####X-Templates
+####Inline
+####Render functions
+####JSX
+####Single page components  
 
 也许还有更多！
 
